@@ -9,13 +9,14 @@ import AdminOrders from "./pages/adminView/orders";
 import AdminProducts from "./pages/adminView/products";
 import ShoppingLayout from "./components/shoppingView/layout";
 import NotFound from "./pages/notFound";
+import ShoppingHome from "./pages/shoppingView/home";
+import ShoppingListing from "./pages/shoppingView/listing";
+import ShoppingCheckout from "./pages/shoppingView/checkout";
+import ShoppingAccount from "./pages/shoppingView/account";
 
 function App() {
   return (
     <div className="flex flex-col overflow-hidden bg-white">
-      {/* common component */}
-      <h1>Header components</h1>
-
       <Routes>
         <Route path="/auth" element={<AuthLayout />}>
           <Route path="login" element={<AuthLogin />} />
@@ -27,7 +28,12 @@ function App() {
           <Route path="orders" element={<AdminOrders />} />
           <Route path="features" element={<AdminFeatures />} />
         </Route>
-        <Route path="/shop" element={<ShoppingLayout />}></Route>
+        <Route path="/shop" element={<ShoppingLayout />}>
+          <Route path="home" element={<ShoppingHome />} />
+          <Route path="listing" element={<ShoppingListing />} />
+          <Route path="checkout" element={<ShoppingCheckout />} />
+          <Route path="account" element={<ShoppingAccount />} />
+        </Route>
         <Route path="*" element={<NotFound />} />
       </Routes>
     </div>
