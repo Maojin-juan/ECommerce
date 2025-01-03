@@ -38,7 +38,7 @@ function CheckAuth({ isAuthenticated, user, children }) {
     user?.role === "admin" &&
     location.pathname.includes("shop")
   ) {
-    return <Navigate to="/admi n/dashboard" />;
+    return <Navigate to="/admin/dashboard" />;
   }
 
   return <>{children}</>;
