@@ -1,10 +1,11 @@
 // External modules
-import express from "express";
-import cookieParser from "cookie-parser";
-import cors from "cors";
+const express = require("express");
+const cookieParser = require("cookie-parser");
+const cors = require("cors");
+const authRouter = require("./routes/auth/authRoutes.js");
 
 // Internal modules
-import connectDB from "./config/dbConnection.js";
+const connectDB = require("./config/dbConnection.js");
 
 connectDB();
 
@@ -28,5 +29,6 @@ app.use(
 
 app.use(cookieParser());
 app.use(express.json());
+app.use("/api/auth", authRouter);
 
 app.listen(PORT, () => console.log(`Server is running on port ${PORT}`));
