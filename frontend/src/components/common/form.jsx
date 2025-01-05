@@ -20,11 +20,7 @@ function CommonForm({
 }) {
   function renderInputsByComponentType(getControlItem) {
     let element = null;
-
-    const value =
-      formData[getControlItem.name] ||
-      formData[getControlItem.email] ||
-      formData[getControlItem.password];
+    const value = formData[getControlItem.name] || "";
 
     switch (getControlItem.CommonForm) {
       case types.INPUT:
@@ -34,6 +30,7 @@ function CommonForm({
             placeholder={getControlItem.placeholder}
             id={getControlItem.name}
             type={getControlItem.type}
+            value={value}
             onChange={(event) =>
               setFormData({
                 ...formData,
