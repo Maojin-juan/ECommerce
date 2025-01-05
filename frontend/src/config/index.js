@@ -21,3 +21,20 @@ export const registerFormControls = [
     type: "password",
   },
 ];
+
+export const loginFormControls = [
+  {
+    name: "email",
+    label: "Email",
+    placeholder: "Enter your user email",
+    componentType: "input",
+    type: "email",
+  },
+  {
+    name: "password",
+    label: "Password",
+    placeholder: "Enter your user password",
+    componentType: "input",
+    type: "password",
+  },
+];
