@@ -26,11 +26,14 @@ function AuthRegister() {
           title: data?.payload?.message,
         });
         navigate("/auth/login");
+      } else {
+        toast({
+          title: data?.payload?.message,
+          variant: "destructive",
+        });
       }
     });
   }
-
-  console.log(formData);
 
   return (
     <div className="w-full mx-auto max-w-md space-y-6">
