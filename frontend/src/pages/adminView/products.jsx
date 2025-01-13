@@ -12,7 +12,7 @@ import { Fragment, useState } from "react";
 function onSubmit() {}
 
 const initialFormData = {
-  imageL: null,
+  image: null,
   title: "",
   description: "",
   category: "",
