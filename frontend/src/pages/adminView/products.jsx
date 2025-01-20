@@ -1,13 +1,16 @@
-import CommonForm from "@/components/common/form";
-import { Button } from "@/components/ui/button";
+import { Fragment, useState } from "react";
+
 import {
   Sheet,
   SheetContent,
   SheetHeader,
   SheetTitle,
 } from "@/components/ui/sheet";
+import { Button } from "@/components/ui/button";
+
+import CommonForm from "@/components/common/form";
+import ProductImageUpload from "@/components/adminView/imageUpload";
 import { addProductFormElements } from "@/config";
-import { Fragment, useState } from "react";
 
 function onSubmit() {}
 
@@ -25,6 +28,10 @@ const initialFormData = {
 function AdminProducts() {
   const [openCreateProductDialog, setOpenCreateProductDialog] = useState(false);
   const [formData, setFormData] = useState(initialFormData);
+  const [imageFile, setImageFile] = useState(null);
+  const [uploadImageUrl, setUploadImageUrl] = useState("");
+
+  function onSubmit() {}
 
   return (
     <Fragment>
@@ -44,6 +51,12 @@ function AdminProducts() {
           <SheetHeader>
             <SheetTitle>Add New Product</SheetTitle>
           </SheetHeader>
+          <ProductImageUpload
+            file={imageFile}
+            setFile={setImageFile}
+            uploadImageUrl={uploadImageUrl}
+            setUploadImageUrl={setUploadImageUrl}
+          />
           <div className="py-6">
             <CommonForm
               onSubmit={onSubmit}
