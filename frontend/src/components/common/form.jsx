@@ -1,7 +1,12 @@
-import { SelectContent } from "@radix-ui/react-select";
 import { Label } from "../ui/label";
 import { Input } from "../ui/input";
-import { Select, SelectTrigger, SelectValue, SelectItem } from "../ui/select";
+import {
+  Select,
+  SelectTrigger,
+  SelectValue,
+  SelectItem,
+  SelectContent,
+} from "../ui/select";
 import { Textarea } from "../ui/textarea";
 import { Button } from "../ui/button";
 
@@ -12,17 +17,17 @@ const types = {
 };
 
 function CommonForm({
-  formControls,
+  onSubmit,
   formData,
   setFormData,
-  onSubmit,
   buttonText,
+  formControls,
 }) {
   function renderInputsByComponentType(getControlItem) {
     let element = null;
     const value = formData[getControlItem.name] || "";
 
-    switch (getControlItem.CommonForm) {
+    switch (getControlItem.componentType) {
       case types.INPUT:
         element = (
           <Input
@@ -53,7 +58,7 @@ function CommonForm({
             value={value}
           >
             <SelectTrigger className="w-full">
-              <SelectValue placeholder={getControlItem.placeholder} />
+              <SelectValue placeholder={getControlItem.label} />
             </SelectTrigger>
             <SelectContent>
               {getControlItem.options && getControlItem.options.length > 0
