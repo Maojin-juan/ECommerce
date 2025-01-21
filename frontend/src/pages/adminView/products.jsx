@@ -47,13 +47,17 @@ function AdminProducts() {
           setOpenCreateProductDialog(false);
         }}
       >
-        <SheetContent side="right" className="overflow-auto">
+        <SheetContent
+          side="right"
+          className="overflow-auto"
+          aria-describedby={undefined}
+        >
           <SheetHeader>
             <SheetTitle>Add New Product</SheetTitle>
           </SheetHeader>
           <ProductImageUpload
-            file={imageFile}
-            setFile={setImageFile}
+            imageFile={imageFile}
+            setImageFile={setImageFile}
             uploadImageUrl={uploadImageUrl}
             setUploadImageUrl={setUploadImageUrl}
           />
