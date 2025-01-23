@@ -1,4 +1,4 @@
-import { Fragment, useState } from "react";
+import { Fragment, useEffect, useState } from "react";
 
 import {
   Sheet,
@@ -11,8 +11,8 @@ import { Button } from "@/components/ui/button";
 import CommonForm from "@/components/common/form";
 import ProductImageUpload from "@/components/adminView/imageUpload";
 import { addProductFormElements } from "@/config";
-
-function onSubmit() {}
+import { useDispatch, useSelector } from "react-redux";
+import { fetchAllProducts } from "@/store/admin/productSlice";
 
 const initialFormData = {
   image: null,
@@ -31,10 +31,18 @@ function AdminProducts() {
   const [imageFile, setImageFile] = useState(null);
   const [uploadImageUrl, setUploadImageUrl] = useState("");
   const [imageLoadingState, setImageLoadingState] = useState(false);
+  const { productList } = useSelector((state) => state.adminProducts);
+  const dispatch = useDispatch();
 
-  function onSubmit() {}
+  function onSubmit(event) {
+    event.preventDefault();
+  }
 
-  console.log(formData, "formData");
+  useEffect(() => {
+    dispatch(fetchAllProducts());
+  }, [dispatch]);
+
+  console.log(productList, "formData");
 
   return (
     <Fragment>
@@ -63,6 +71,7 @@ function AdminProducts() {
             setImageFile={setImageFile}
             uploadImageUrl={uploadImageUrl}
             setUploadImageUrl={setUploadImageUrl}
+            imageLoadingState={imageLoadingState}
             setImageLoadingState={setImageLoadingState}
           />
           <div className="py-6">
