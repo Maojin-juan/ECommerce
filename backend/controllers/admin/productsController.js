@@ -58,7 +58,7 @@ const addProduct = async (req, res) => {
 };
 
 // fetch all products
-const fetchProduct = async (req, res) => {
+const fetchAllProduct = async (req, res) => {
   try {
     const listOfProducts = await Product.find({});
     res.status(200).json({
@@ -147,7 +147,7 @@ const deleteProduct = async (req, res) => {
 module.exports = {
   handleImageUpload,
   addProduct,
-  fetchProduct,
+  fetchAllProduct,
   editProduct,
   deleteProduct,
 };
