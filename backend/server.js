@@ -5,6 +5,7 @@ const cors = require("cors");
 const authRouter = require("./routes/auth/authRoutes.js");
 const adminProductsRouter = require("./routes/admin/productsRoutes.js");
 const shopProductsRouter = require("./routes/shop/productsRoutes.js");
+const shopCartRouter = require("./routes/shop/cartRoutes.js");
 
 // Internal modules
 const connectDB = require("./config/dbConnection.js");
@@ -38,5 +39,6 @@ app.use(express.json());
 app.use("/api/auth", authRouter);
 app.use("/api/admin/products", adminProductsRouter);
 app.use("/api/shop/products", shopProductsRouter);
+app.use("/api/shop/cart", shopCartRouter);
 
 app.listen(PORT, () => console.log(`Server is running on port ${PORT}`));
