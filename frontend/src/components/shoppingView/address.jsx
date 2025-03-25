@@ -116,7 +116,7 @@ function Address() {
 
   return (
     <Card>
-      <div className="mb-5 grid grid-cols-1 gap-2 p-3 sm:grid-cols-2 md:grid-cols-3">
+      <div className="mb-5 grid grid-cols-1 gap-2 p-3 sm:grid-cols-2">
         {addressList && addressList.length > 0
           ? addressList.map((singleAddressItem) => (
               <AddressCard
