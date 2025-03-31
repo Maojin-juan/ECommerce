@@ -4,9 +4,12 @@ const cookieParser = require("cookie-parser");
 const cors = require("cors");
 const authRouter = require("./routes/auth/authRoutes.js");
 const adminProductsRouter = require("./routes/admin/productsRoutes.js");
+const adminOrderRouter = require("./routes/admin/orderRoutes.js");
+
 const shopProductsRouter = require("./routes/shop/productsRoutes.js");
 const shopCartRouter = require("./routes/shop/cartRoutes.js");
 const shopAddressRouter = require("./routes/shop/addressRoutes.js");
+const shopOrderRouter = require("./routes/shop/orderRoutes.js");
 
 // Internal modules
 const connectDB = require("./config/dbConnection.js");
@@ -39,8 +42,11 @@ app.use(express.json());
 // 註冊路由
 app.use("/api/auth", authRouter);
 app.use("/api/admin/products", adminProductsRouter);
+app.use("/api/admin/orders", adminOrderRouter);
+
 app.use("/api/shop/products", shopProductsRouter);
 app.use("/api/shop/cart", shopCartRouter);
 app.use("/api/shop/address", shopAddressRouter);
+app.use("/api/shop/order", shopOrderRouter);
 
 app.listen(PORT, () => console.log(`Server is running on port ${PORT}`));
