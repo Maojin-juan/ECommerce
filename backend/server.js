@@ -10,6 +10,7 @@ const shopProductsRouter = require("./routes/shop/productsRoutes.js");
 const shopCartRouter = require("./routes/shop/cartRoutes.js");
 const shopAddressRouter = require("./routes/shop/addressRoutes.js");
 const shopOrderRouter = require("./routes/shop/orderRoutes.js");
+const shopSearchRouter = require("./routes/shop/searchRoutes.js");
 
 // Internal modules
 const connectDB = require("./config/dbConnection.js");
@@ -48,5 +49,6 @@ app.use("/api/shop/products", shopProductsRouter);
 app.use("/api/shop/cart", shopCartRouter);
 app.use("/api/shop/address", shopAddressRouter);
 app.use("/api/shop/order", shopOrderRouter);
+app.use("/api/shop/search", shopSearchRouter);
 
 app.listen(PORT, () => console.log(`Server is running on port ${PORT}`));
