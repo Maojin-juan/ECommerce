@@ -17,7 +17,7 @@ import { ArrowUpDownIcon } from "lucide-react";
 import { useEffect, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { useSearchParams } from "react-router-dom";
-import ProductDetailsDialog from "./productDetails";
+import ProductDetailsDialog from "../../components/shoppingView/productDetails";
 import { addToCart, fetchCartItems } from "@/store/shop/cartSlice";
 import { useToast } from "@/hooks/use-toast";
 

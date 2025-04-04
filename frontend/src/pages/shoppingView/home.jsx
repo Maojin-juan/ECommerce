@@ -28,7 +28,7 @@ import ShoppingProductTile from "@/components/shoppingView/productTile";
 import { useNavigate } from "react-router-dom";
 import { addToCart, fetchCartItems } from "@/store/shop/cartSlice";
 import { useToast } from "@/hooks/use-toast";
-import ProductDetailsDialog from "./productDetails";
+import ProductDetailsDialog from "../../components/shoppingView/productDetails";
 
 const categoriesWithIcon = [
   { id: "men", label: "Men", icon: ShirtIcon },

@@ -6,7 +6,7 @@ import { getSearchResults, resetSearchResults } from "@/store/shop/searchSlice";
 import { useEffect, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { useSearchParams } from "react-router-dom";
-import ProductDetailsDialog from "./productDetails";
+import ProductDetailsDialog from "../../components/shoppingView/productDetails";
 import { fetchProductDetails } from "@/store/shop/productsSlice";
 
 function SearchProducts() {
