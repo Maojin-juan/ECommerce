@@ -26,7 +26,7 @@ const PORT = process.env.PORT || 5000;
 // 配置 CORS 中間件，允許來自 http://localhost:5173 的請求
 app.use(
   cors({
-    origin: "http://localhost:5173",
+    origin: process.env.CLIENT_BASE_URL,
     methods: ["GET", "POST", "PUT", "DELETE"],
     allowedHeaders: [
       "Content-Type",
