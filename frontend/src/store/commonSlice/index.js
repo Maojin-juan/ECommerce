@@ -7,7 +7,7 @@ const initialState = {
 };
 
 export const getFeatureImages = createAsyncThunk(
-  "/order/getFeatureImages",
+  "/common/getFeatureImages",
   async () => {
     const response = await axios.get(
       `${import.meta.env.VITE_API_URL}/api/common/feature/get`,
@@ -18,7 +18,7 @@ export const getFeatureImages = createAsyncThunk(
 );
 
 export const addFeatureImage = createAsyncThunk(
-  "/order/addFeatureImage",
+  "/common/addFeatureImage",
   async (image) => {
     const response = await axios.post(
       `${import.meta.env.VITE_API_URL}/api/common/feature/add`,
